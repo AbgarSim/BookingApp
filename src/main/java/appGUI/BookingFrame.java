@@ -10,7 +10,7 @@ import dataBaseManipulations.DataBaseConnection;
 import org.apache.commons.lang3.StringUtils;
 
 
-public class BookingFrame {
+public final class BookingFrame {
     private JFrame bookingFrame;
     private JTextArea text;
     private JPanel panelButtons;
