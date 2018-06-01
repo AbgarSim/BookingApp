@@ -95,6 +95,5 @@ public final class DataBaseConnection {
                 = new DataBaseConnection("jdbc:postgresql://localhost:8000/bookingapp",
                 "postgres",
                 "darkknight123");
-
     }
 }
