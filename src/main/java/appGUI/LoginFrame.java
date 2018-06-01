@@ -4,7 +4,7 @@ import dataBaseManipulations.DataBaseConnection;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class LoginFrame {
+public final class LoginFrame {
     private JFrame loginFrame;
     private JTextField urlInput, usernameInput;
     private JPasswordField passwordInput;
