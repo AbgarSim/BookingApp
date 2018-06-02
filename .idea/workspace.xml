@@ -6,20 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b879b991-fc7a-40a8-89d2-2569aa616425" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/BookingApp_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+    <list default="true" id="b879b991-fc7a-40a8-89d2-2569aa616425" name="Default" comment="Jar Folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appGUI/BookingFrame.java" afterPath="$PROJECT_DIR$/src/main/java/appGUI/BookingFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appGUI/LoginFrame.java" afterPath="$PROJECT_DIR$/src/main/java/appGUI/LoginFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataBaseManipulations/DataBaseConnection.java" afterPath="$PROJECT_DIR$/src/main/java/dataBaseManipulations/DataBaseConnection.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame$BookingAction.class" afterPath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame$BookingAction.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame$ChangeCarriage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame$PrintOutAllInfo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame.class" afterPath="$PROJECT_DIR$/target/classes/appGUI/BookingFrame.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/LoginFrame$DataListener.class" afterPath="$PROJECT_DIR$/target/classes/appGUI/LoginFrame$DataListener.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/appGUI/LoginFrame.class" afterPath="$PROJECT_DIR$/target/classes/appGUI/LoginFrame.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataBaseManipulations/DataBaseConnection.class" afterPath="$PROJECT_DIR$/target/classes/dataBaseManipulations/DataBaseConnection.class" />
+      <change beforePath="$PROJECT_DIR$/BookingApp.iml" afterPath="$PROJECT_DIR$/BookingApp.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -102,11 +91,7 @@
                 <element signature="method#createTableIfNeeded#0;class#DataBaseConnection#0" expanded="false" />
                 <element signature="method#insertSql#0;class#DataBaseConnection#0" expanded="false" />
                 <element signature="method#deleteSql#0;class#DataBaseConnection#0" expanded="false" />
-                <marker date="1527900717132" expanded="true" signature="1365:1630" ph="CREATE TABLE... SEAT" />
-                <marker date="1527900717132" expanded="true" signature="1735:1767" ph="SELECT to_re... " />
-                <marker date="1527900717132" expanded="true" signature="2373:2519" ph="INSERT INTO seat... " />
                 <marker date="1527900717132" expanded="true" signature="2771:2799" ph="SELECT * fro... seat" />
-                <marker date="1527900717132" expanded="true" signature="3454:3480" ph="delete from seat... " />
               </folding>
             </state>
           </provider>
@@ -146,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/appGUI/AppStart.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,6 +148,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -242,13 +230,6 @@
             <path>
               <item name="BookingApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookingApp" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="BookingApp_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookingApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,7 +277,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -305,6 +286,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThinkpadX220-53\Desktop\BookingApp" />
       <recent name="C:\Users\ThinkpadX220-53\Desktop\BookingApp\src\main\java" />
     </key>
   </component>
@@ -495,15 +477,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527897283533</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished application">
+      <created>1527901878139</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527901878139</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10030000" />
+    <option name="totallyTimeSpent" value="10231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -518,7 +506,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -562,7 +550,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DataBaseConnection is now complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="DataBaseConnection is now complete" />
+    <MESSAGE value="Finished application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -627,11 +616,7 @@
             <element signature="method#createTableIfNeeded#0;class#DataBaseConnection#0" expanded="false" />
             <element signature="method#insertSql#0;class#DataBaseConnection#0" expanded="false" />
             <element signature="method#deleteSql#0;class#DataBaseConnection#0" expanded="false" />
-            <marker date="1527900717132" expanded="true" signature="1365:1630" ph="CREATE TABLE... SEAT" />
-            <marker date="1527900717132" expanded="true" signature="1735:1767" ph="SELECT to_re... " />
-            <marker date="1527900717132" expanded="true" signature="2373:2519" ph="INSERT INTO seat... " />
             <marker date="1527900717132" expanded="true" signature="2771:2799" ph="SELECT * fro... seat" />
-            <marker date="1527900717132" expanded="true" signature="3454:3480" ph="delete from seat... " />
           </folding>
         </state>
       </provider>
@@ -705,11 +690,7 @@
             <element signature="method#createTableIfNeeded#0;class#DataBaseConnection#0" expanded="false" />
             <element signature="method#insertSql#0;class#DataBaseConnection#0" expanded="false" />
             <element signature="method#deleteSql#0;class#DataBaseConnection#0" expanded="false" />
-            <marker date="1527900717132" expanded="true" signature="1365:1630" ph="CREATE TABLE... SEAT" />
-            <marker date="1527900717132" expanded="true" signature="1735:1767" ph="SELECT to_re... " />
-            <marker date="1527900717132" expanded="true" signature="2373:2519" ph="INSERT INTO seat... " />
             <marker date="1527900717132" expanded="true" signature="2771:2799" ph="SELECT * fro... seat" />
-            <marker date="1527900717132" expanded="true" signature="3454:3480" ph="delete from seat... " />
           </folding>
         </state>
       </provider>
@@ -739,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/appGUI/AppStart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
