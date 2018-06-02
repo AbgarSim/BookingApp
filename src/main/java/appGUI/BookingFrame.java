@@ -34,7 +34,6 @@ public final class BookingFrame {
         }
     }
 
-    //Builds the frame
     public void start() {
         bookingFrame = new JFrame("Demo");
 
@@ -57,7 +56,7 @@ public final class BookingFrame {
         bookingFrame.setResizable(false);
         bookingFrame.setVisible(true);
     }
-    //set up buttons
+
     private void setButtons() {
         int amountOfPlaces = 25;
         for (int i = 0; i < amountOfPlaces; i++) {
@@ -84,7 +83,7 @@ public final class BookingFrame {
                 treatBookedSeat(b);
             }
         }
-        //registers a new record in the database if credentials are valid
+
         void createBookingEntry(BookingButton b, int ID) {
             List<String> list = new ArrayList<String>();
             list.add(String.valueOf(ID));
@@ -107,7 +106,7 @@ public final class BookingFrame {
             }
         }
     }
-    //either deletes the reservation or prints the info about reservation
+
     private void treatBookedSeat(BookingButton b) {
         Object[] options = {"Check the info", "Delete the info"};
         int choice = JOptionPane.showOptionDialog(bookingFrame,
