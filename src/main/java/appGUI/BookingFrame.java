@@ -2,36 +2,40 @@ package appGUI;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Connection;
 import java.util.*;
+import java.util.List;
 import javax.swing.*;
 
+import dataBaseManipulations.DataBaseConnection;
 import org.apache.commons.lang3.StringUtils;
 
 
 public class BookingFrame {
-
-    //Элементы GUI
     private JFrame frame;
-    private JMenuBar menuBar;
-    private JMenu menu;
-    private JMenuItem menuItem;
     private JTextArea text;
-    private JPanel panel, panelButtons;
-    private JLabel label, label2;
-    private JButton button;
+    private JPanel panelButtons;
+    private DataBaseConnection dataBaseConnection;
+
+    BookingFrame(DataBaseConnection dataBaseConnection) {
+        this.dataBaseConnection = dataBaseConnection;
+    }
+
+    class BookingButton extends JButton {
+        final int ID;
+
+        public BookingButton(int id) {
+            ID = id;
+        }
+
+        BookingButton(int id, String text) {
+            super(text);
+            ID = id;
+        }
+    }
 
     public void start() {
         frame = new JFrame("Demo");
-        menuBar = new JMenuBar();
-
-        menu = new JMenu("Menu");
-        menuItem = new JMenuItem("Choose carriege");
-        menuItem.addActionListener(new ChangeCarriage());
-        menu.add(menuItem);
-        menuItem = new JMenuItem("Check information about all passangers");
-        menuItem.addActionListener(new PrintOutAllInfo());
-        menu.add(menuItem);
-        menuBar.add(menu);
 
         text = new JTextArea(10, 30);
         text.setText("Logger field");
@@ -44,34 +48,24 @@ public class BookingFrame {
         panelButtons = new JPanel();
         setButtons();
 
-        frame.setJMenuBar(menuBar);
         frame.getContentPane().add(BorderLayout.NORTH, scroller);
         frame.getContentPane().add(BorderLayout.CENTER, panelButtons);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(800, 400);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
     }
 
-    public void setButtons() {
+    private void setButtons() {
         int amountOfPlaces = 25;
-
         for (int i = 0; i < amountOfPlaces; i++) {
-            //JButton button = new JButton("Кнопка");
-            button = new JButton(i + 1 + " Seat");
-            //Тут должно быть считывание из БД и какая либо проверка на занято ли место или нет
-            //пока поставил лидл ID
-
-            Object ID = new Object();
-            //если ID = null - то значит место свободное и ставить надо GREEN, если не null, то занято и RED
-            ID = null;
-            if (ID == null) {
-                button.setBackground(Color.GREEN);
-            } else {
+            BookingButton button = new BookingButton(i + 1, i + 1 + " Seat");
+            if (dataBaseConnection.selectSql(button.ID) != null) {
                 button.setBackground(Color.RED);
+            } else {
+                button.setBackground(Color.GREEN);
             }
-
             button.addActionListener(new BookingAction());
             panelButtons.add(button);
         }
@@ -82,42 +76,40 @@ public class BookingFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            JButton b = (JButton) e.getSource();
+            BookingButton b = (BookingButton) e.getSource();
             if (b.getBackground() == Color.GREEN) {
-                createBookingEntry(b);
-//                b.setAction(new GAction(b));
+                createBookingEntry(b, b.ID);
             } else {
                 treatBookedSeat(b);
             }
         }
 
-        void createBookingEntry(JButton b) {
-            ArrayList<String> list = new ArrayList();
-
+        void createBookingEntry(BookingButton b, int ID) {
+            List<String> list = new ArrayList<String>();
+            list.add(String.valueOf(ID));
             list.add(JOptionPane.showInputDialog
                     (frame, "Type in name of the passenger", "Type in information", JOptionPane.PLAIN_MESSAGE));
             list.add(JOptionPane.showInputDialog
                     (frame, "Type in surname of the passenger", "Type in information", JOptionPane.PLAIN_MESSAGE));
             list.add(JOptionPane.showInputDialog
-                    (frame, "Type in ALO of the passenger", "Type in information", JOptionPane.PLAIN_MESSAGE));
-
-//            Запись list в БД
-
+                    (frame, "Type in email of the passenger", "Type in information", JOptionPane.PLAIN_MESSAGE));
             int f = list.size();
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i) == null || list.get(i).isEmpty() || StringUtils.isBlank(list.get(i))) {
                     JOptionPane.showMessageDialog(frame, "Lack of information");
                     break;
                 }
-                if (f == i + 1)
+                if (f == i + 1) {
                     b.setBackground(Color.RED);
+                    dataBaseConnection.insertSql(Integer.parseInt(list.get(0)), list.get(1), list.get(2), list.get(3));
+                }
             }
         }
     }
 
-    private void treatBookedSeat(JButton b) {
+    private void treatBookedSeat(BookingButton b) {
         Object[] options = {"Check the info", "Delete the info"};
-        int choise = JOptionPane.showOptionDialog(frame,
+        int choice = JOptionPane.showOptionDialog(frame,
                 "Choose what to do",
                 "What to do?",
                 JOptionPane.YES_NO_OPTION,
@@ -126,35 +118,20 @@ public class BookingFrame {
                 options,
                 options[1]);
 
-        if (choise == 0) {
-            //Тут сделать вывод на экран информации о пассажире из БД
-            text.append("ALO");
+        if (choice == 0) {
+            String data[] = dataBaseConnection.selectSql(b.ID);
+            assert data != null;
+            text.append("Seat id: " + data[0] +
+                    "\nPassenger name: " + data[1] +
+                    "\nPassenger surname: " + data[2] +
+                    "\nPassenger email: " + data[3]);
         }
-        if (choise == 1) {
-            //Тут сделать удаление информации о пассажире из БД
+        if (choice == 1) {
+            dataBaseConnection.deleteSql(b.ID);
+            text.append("\nSuccessfully removed record from the seat number " + b.ID);
             b.setBackground(Color.GREEN);
         }
     }
 
-    class ChangeCarriage implements ActionListener {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            //TO DO 
-        }
-    }
-
-    class PrintOutAllInfo implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            //Тут получаем ВСЮ инфу из БД и выводим на экран
-            //ты мне инфу эту получи, а я её выведу.
-            text.append("");
-        }
-    }
-
-    public static void main(String[] args) {
-        new BookingFrame();
-    }
 }

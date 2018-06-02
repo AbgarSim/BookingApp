@@ -90,6 +90,20 @@ public final class DataBaseConnection {
         }
     }
 
+    public void deleteSql(int ID){
+        String deleteRecordQuery = "delete from seat where id=" + ID + ";";
+        try {
+            statement = connection.createStatement();
+            statement.execute(deleteRecordQuery);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Connection getConnection(){
+        return connection;
+    }
+
     public static void main(String[] args) {
         DataBaseConnection dataBaseConnection
                 = new DataBaseConnection("jdbc:postgresql://localhost:8000/bookingapp",
